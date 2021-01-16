@@ -4,7 +4,6 @@
 #include <vector>
 #include <string>
 
-using namespace std;
 const int ALPHABETS_SIZE = 26;
 
 char int_to_char(int);
@@ -22,8 +21,8 @@ class Trie {
 public:
     TrieNode *root;
 
-    void insert(string);
-    vector<string> suggestions(string);
+    void insert(std::string);
+    std::vector<std::string> suggestions(std::string);
     Trie();
 };
 
