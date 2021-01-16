@@ -1,11 +1,11 @@
 #include "trie.h"
 
-void Trie::insert(string word) {
+void Trie::insert(std::string word) {
 
 }
 
-vector<string> Trie::suggestions(string word) {
-    return vector<string>();
+std::vector<std::string> Trie::suggestions(std::string word) {
+    return std::vector<std::string>();
 }
 
 Trie::Trie() {
