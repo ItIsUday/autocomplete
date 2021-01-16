@@ -12,14 +12,10 @@ Trie::Trie() {
 
 }
 
-TrieNode::TrieNode() {
-
+char index_to_char(int val) {
+    return (char) (val + (int) 'a');
 }
 
-char int_to_char(int val) {
-    return 0;
-}
-
-int char_to_int(char val) {
-    return 0;
+int char_to_index(char val) {
+    return (int) val - (int) 'a';
 }

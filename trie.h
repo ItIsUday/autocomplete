@@ -6,20 +6,18 @@
 
 const int ALPHABETS_SIZE = 26;
 
-char int_to_char(int);
-int char_to_int(char);
+char index_to_char(int);
+int char_to_index(char);
 
 class TrieNode {
 public:
-    bool end_of_word;
-    TrieNode *children[ALPHABETS_SIZE];
-
-    TrieNode();
+    bool end_of_word = false;
+    TrieNode *children[ALPHABETS_SIZE]{};
 };
 
 class Trie {
 public:
-    TrieNode *root;
+    TrieNode root = TrieNode();
 
     void insert(std::string);
     std::vector<std::string> suggestions(std::string);
