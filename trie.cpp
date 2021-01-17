@@ -6,7 +6,6 @@ void Trie::insert(std::string word)
     for(char level : word)
     {
         int index = char_to_index(level);
-
         if(!temp->children[index])
         {
             temp->children[index] = new TrieNode;
