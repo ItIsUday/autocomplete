@@ -3,7 +3,6 @@
 void Trie::insert(std::string word)
 {
     TrieNode *temp = &root;
-
     for(char level : word)
     {
         int index = char_to_index(level);
@@ -14,7 +13,6 @@ void Trie::insert(std::string word)
         }
         temp = temp->children[index];
     }
-
     temp->end_of_word = true;
 }
 
