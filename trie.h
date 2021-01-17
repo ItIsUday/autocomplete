@@ -12,16 +12,20 @@ int char_to_index(char);
 class TrieNode {
 public:
     bool end_of_word = false;
-    TrieNode *children[ALPHABETS_SIZE]{};
+    TrieNode *children[ALPHABETS_SIZE]{nullptr};
+
+    bool is_leaf();
 };
 
 class Trie {
+    static void get_words(std::vector<std::string> &, TrieNode *, std::string);
 public:
     TrieNode root = TrieNode();
 
     void insert(std::string);
     std::vector<std::string> suggestions(std::string);
     Trie();
+    Trie(std::string);
 };
 
 #endif
