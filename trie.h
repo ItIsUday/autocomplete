@@ -26,7 +26,7 @@ public:
     void insert(std::string);
     std::vector<std::string> suggestions(std::string);
     Trie();
-    Trie(std::string);
+    explicit Trie(const std::string &);
 };
 
 #endif
