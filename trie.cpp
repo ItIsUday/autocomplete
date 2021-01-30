@@ -19,7 +19,7 @@ void Trie::insert(std::string word) {
 std::vector<std::string> Trie::suggestions(std::string word) {
     std::vector<std::string> words;
 
-    if(!is_valid(word))
+    if (!is_valid(word))
         return words;
 
     TrieNode *temp = &root;
@@ -36,9 +36,7 @@ std::vector<std::string> Trie::suggestions(std::string word) {
     return words;
 }
 
-Trie::Trie() {
-
-}
+Trie::Trie() = default;
 
 void Trie::get_words(std::vector<std::string> &words, TrieNode *node, std::string word) {
     if (node->end_of_word)
@@ -55,7 +53,7 @@ void Trie::get_words(std::vector<std::string> &words, TrieNode *node, std::strin
     }
 }
 
-Trie::Trie(std::string filename) {
+Trie::Trie(const std::string &filename) {
     std::ifstream file(filename);
     if (file.is_open()) {
         std::string word;
@@ -76,7 +74,7 @@ int char_to_index(char val) {
 }
 
 bool is_valid(std::string &word) {
-    return std::all_of(word.begin(), word.end(), [](unsigned char c){ return std::islower(c); });
+    return std::all_of(word.begin(), word.end(), [](unsigned char c) { return std::islower(c); });
 }
 
 bool TrieNode::is_leaf() {

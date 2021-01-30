@@ -21,7 +21,7 @@ char *completion_generator(const char *text, int state) {
         return strdup(matches[match_index++].c_str());
 }
 
-char **completer(const char *text, int start, int end) {
+char **completer(const char *text, int, int) {
     rl_attempted_completion_over = 1;
     return rl_completion_matches(text, completion_generator);
 }
