@@ -3,6 +3,9 @@
 #include <readline/readline.h>
 #include "trie.h"
 
+#define GREEN "\e[1;32m"
+#define RESET "\e[0m"
+
 Trie trie;
 
 char *completion_generator(const char *text, int state) {
@@ -31,15 +34,16 @@ int main() {
     std::cout << "Press <TAB> for autocompletion and press <TAB> twice for displaying all matching words" << std::endl;
 
     trie = Trie("words.txt");
-
     rl_attempted_completion_function = completer;
-
     char *buffer;
-    while ((buffer = readline(">> ")) != nullptr) {
+    char prompt[] = GREEN ">>> " RESET;
+
+    while ((buffer = readline(prompt)) != nullptr) {
         if (strlen(buffer) > 0)
             add_history(buffer);
         std::cout << '[' << buffer << ']' << std::endl;
         free(buffer);
     }
+
     return 0;
 }
