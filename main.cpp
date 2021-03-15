@@ -1,7 +1,7 @@
 #include <iostream>
 #include <readline/history.h>
 #include <readline/readline.h>
-#include "trie.h"
+#include "src/trie/trie.h"
 
 #define GREEN "\e[1;32m"
 #define RESET "\e[0m"
@@ -33,7 +33,7 @@ int main() {
     std::cout << "\t\tWelcome to autocompletion program!!" << std::endl;
     std::cout << "Press <TAB> for autocompletion and press <TAB> twice for displaying all matching words" << std::endl;
 
-    trie = Trie("words.txt");
+    trie = Trie("data/words.txt");
     rl_attempted_completion_function = completer;
     char *buffer;
     char prompt[] = GREEN ">>> " RESET;
