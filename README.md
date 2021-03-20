@@ -17,6 +17,6 @@ Autocompletion like in bash using Tries.
 ```shell
 git clone https://github.com/ItIsUday/autocomplete.git
 cd autocomplete
-g++ *.cpp -o autocomplete -std=gnu++20 -lreadline
+g++ main.cpp src/trie/trie.cpp -o autocomplete -std=gnu++20 -lreadline
 ./autocomplete
 ```
